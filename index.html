@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 9</title>
+</head>
+<body>
 
+  <h1>Module 9</h1>
+  <p>26 October 2026</p>
+
+  <p>This exercise turns the saved Module 6 emissions data into an interactive comparison of Brazil, China, India and the world from 1850 to 2024.</p>
+
+  <h2>Interactive visualisation</h2>
+
+  <iframe src="figures/module9_interactive.html"
+          title="Interactive greenhouse gas emissions chart"
+          style="width:100%;height:750px;border:0;"></iframe>
+
+  <p>Figure 1. Interactive emissions chart. Data from Jones et al. (2025), processed by Our World in Data.</p>
+
+  <h2>Exercise summary</h2>
+
+  <p>This exercise uses R and Plotly to make my Module 6 emissions chart interactive. It compares emissions from Brazil, China, India and the world from 1850 to 2024 based on the same saved dataset.</p>
+
+  <p>First of all, I checked whether there were missing values or duplicate country-year records in the data. Then, a line is created for each series and they are distinguished by colour and line pattern. Then, I added a hover label to show the specific year and its corresponding emissions value. Clickable legend entries allow readers to hide or display different series, while range sliders help users focus on shorter periods of time.</p>
+
+  <p>These interactive functions have their own uses: hovering displays precise values, legend entries reduce visual clutter, and sliders help readers analyse trends in the selected period of time. The vertical axis is kept between 0 and 25 tonnes per person to ensure that the axis scale remains consistent when the displayed time period changes.</p>
+
+  <p>In 2024, among the three selected countries, Brazil had the highest per capita emissions, reaching 13.2 tonnes of carbon dioxide equivalents, followed by China (9.9 tonnes) and India (2.9 tonnes). The global average is 6.7 tonnes per person. The above data includes land use emissions.</p>
+
+  <h2>Data Visualisation Data Card</h2>
+
+  <table border="1" cellpadding="8" cellspacing="0">
+    <tr>
+      <th scope="row">Title</th>
+      <td>
+        <p>Greenhouse gas emissions per person in Brazil, China, India and the world, 1850–2024</p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Summary</th>
+      <td>
+        <p>The interactive line chart compares the annual greenhouse gas emissions per capita for three countries and the world. The hover label shows the annual emissions value, the legend entry can control which series are visible, and the range slider is used to change the displayed period.</p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Data Sources</th>
+      <td>
+        <p>Jones, M. W., Peters, G. P., Gasser, T., Andrew, R. M., Schwingshackl, C., Gütschow, J., Houghton, R. A., Friedlingstein, P., Pongratz, J., &amp; Le Quéré, C. (2025). National contributions to climate change due to historical emissions of carbon dioxide, methane and nitrous oxide (Version 2025.1) [Data set]. Zenodo.
+          <a href="https://doi.org/10.5281/zenodo.16640595">https://doi.org/10.5281/zenodo.16640595</a>
+        </p>
+
+        <p>Our World in Data. (n.d.). Per capita greenhouse gas emissions including land use [Interactive data visualization]. Retrieved October 26, 2026, from
+          <a href="https://ourworldindata.org/grapher/per-capita-ghg-emissions">https://ourworldindata.org/grapher/per-capita-ghg-emissions</a>
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Mapping</th>
+      <td>
+        <p>The horizontal axis represents the year, from 1850 to 2024. The vertical axis represents the per capita carbon dioxide equivalent emissions (unit: tonnes) calculated on the 100-year warming timescale. These values come from the data extracted by the Our World in Data project, based on the research of Jones et al. (2025) and the population data processed by Our World in Data.</p>
+
+        <p>Brazil uses purple solid lines, China uses blue dashed lines, India uses brown dotted lines, and the world uses dark gray dash-dot lines. The legend identifies each curve. The World series represents the global average.</p>
+
+        <p>The hover label shows the year and emissions value, rounded to one decimal place. Click the legend entry to hide or display the corresponding series. The range slider is used to select the year range displayed in the main chart.</p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Important Notes</th>
+      <td>
+        <p>The original CSV file of Module 6 is reused. There are a total of 700 observations: covering 175 years from 1850 to 2024, each year has four series. No missing values or duplicate series-year records were found, so there is no need to impute the data. The chart retains the precision of the stored data and rounds the value displayed by the hover label to one decimal place.</p>
+
+        <p>When the year range changes, the y-axis remains unchanged between 0–25 tonnes per person. Hiding a series will not remove its data from the source file. Emissions include land use emissions, which are estimates and may need to be revised. The average value conceals the differences within the population, and the chart does not establish a causal relationship or show an uncertainty interval.</p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Access</th>
+      <td>
+        <p>A copy of the complete dataset used in this visualisation is available here:
+          <a href="data/emissions_1850_2024.csv" download>Download the data (CSV)</a>.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <h2>AI acknowledgement</h2>
+
+  <p>I used ChatGPT (OpenAI, 2026) to search for information and websites related to data visualisation. I also used ChatGPT (OpenAI, 2026) to identify vulnerabilities in my R code and revise it accordingly.</p>
+
+  <h2>References</h2>
+
+  <p>Jones, M. W., Peters, G. P., Gasser, T., Andrew, R. M., Schwingshackl, C., Gütschow, J., Houghton, R. A., Friedlingstein, P., Pongratz, J., &amp; Le Quéré, C. (2025). National contributions to climate change due to historical emissions of carbon dioxide, methane and nitrous oxide (Version 2025.1) [Data set]. Zenodo.
+    <a href="https://doi.org/10.5281/zenodo.16640595">https://doi.org/10.5281/zenodo.16640595</a>
+  </p>
+
+  <p>Our World in Data. (n.d.). Per capita greenhouse gas emissions including land use [Interactive data visualization]. Retrieved October 26, 2026, from
+    <a href="https://ourworldindata.org/grapher/per-capita-ghg-emissions">https://ourworldindata.org/grapher/per-capita-ghg-emissions</a>
+  </p>
+
+  <p>OpenAI (2026) ChatGPT [Large language model], accessed 26 October 2026.
+    <a href="https://chatgpt.com/share/6adf6f82-6498-83ec-b1cd-063214f302d9">https://chatgpt.com/share/6adf6f82-6498-83ec-b1cd-063214f302d9</a>
+  </p>
+
+</body>
+</html>
