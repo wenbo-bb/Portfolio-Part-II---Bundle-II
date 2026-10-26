@@ -1,5 +1,4 @@
-# Module 9: run from the code folder in RStudio.
-# Install once if needed: install.packages(c("plotly", "htmlwidgets"))
+
 library(plotly)
 library(htmlwidgets)
 
@@ -54,10 +53,10 @@ p <- layout(
   paper_bgcolor = "white", plot_bgcolor = "white"
 )
 
-# Keep the interface simple: no toolbar or export button.
+
 p <- config(p, displayModeBar = FALSE, scrollZoom = FALSE, responsive = TRUE)
 
-# Save the interactive chart in the figures folder for GitHub Pages.
+
 dir.create("../figures", showWarnings = FALSE)
 saveWidget(p, "../figures/module9_interactive.html", selfcontained = TRUE,
            title = "Module 9 interactive emissions chart")
